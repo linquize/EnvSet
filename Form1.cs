@@ -18,20 +18,22 @@ namespace EnvSet
             dgvSystem.LoadEnvVars();
         }
 
-        void SaveEnvironmentVariables()
-        {
-            dgvUser.SaveEnvVars();
-            dgvSystem.SaveEnvVars();
-        }
-
         void Form1_Load(object sender, EventArgs e)
         {
             LoadEnvironmentVariables();
         }
 
-        void tsbSave_Click(object sender, EventArgs e)
+        void tsbSaveUser_Click(object sender, EventArgs e)
         {
-            SaveEnvironmentVariables();
+            dgvUser.SaveEnvVars();
+            dgvSystem.SaveEnvVars();
+            MessageBox.Show("Saved!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        void tsbSaveAll_Click(object sender, EventArgs e)
+        {
+            dgvUser.SaveEnvVars();
+            dgvSystem.SaveEnvVars();
             MessageBox.Show("Saved!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbSave = new System.Windows.Forms.ToolStripButton();
             this.tsbReload = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvSystem = new EnvSet.EnvVarEditor();
             this.dgvUser = new EnvSet.EnvVarEditor();
+            this.tsbSave = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsbSaveUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbSaveAll = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -50,25 +52,16 @@
             this.tsbReload});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(104, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(134, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbSave
-            // 
-            this.tsbSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSave.Name = "tsbSave";
-            this.tsbSave.Size = new System.Drawing.Size(39, 22);
-            this.tsbSave.Text = "&Save";
-            this.tsbSave.Click += new System.EventHandler(this.tsbSave_Click);
             // 
             // tsbReload
             // 
             this.tsbReload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsbReload.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbReload.Name = "tsbReload";
-            this.tsbReload.Size = new System.Drawing.Size(53, 22);
+            this.tsbReload.Size = new System.Drawing.Size(47, 22);
             this.tsbReload.Text = "&Reload";
             this.tsbReload.Click += new System.EventHandler(this.tsbReload_Click);
             // 
@@ -124,13 +117,38 @@
             this.dgvUser.Size = new System.Drawing.Size(806, 222);
             this.dgvUser.TabIndex = 0;
             // 
+            // tsbSave
+            // 
+            this.tsbSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbSave.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbSaveUser,
+            this.tsbSaveAll});
+            this.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSave.Name = "tsbSave";
+            this.tsbSave.Size = new System.Drawing.Size(44, 22);
+            this.tsbSave.Text = "&Save";
+            // 
+            // tsbSaveUser
+            // 
+            this.tsbSaveUser.Name = "tsbSaveUser";
+            this.tsbSaveUser.Size = new System.Drawing.Size(152, 22);
+            this.tsbSaveUser.Text = "Save User";
+            this.tsbSaveUser.Click += new System.EventHandler(this.tsbSaveUser_Click);
+            // 
+            // tsbSaveAll
+            // 
+            this.tsbSaveAll.Name = "tsbSaveAll";
+            this.tsbSaveAll.Size = new System.Drawing.Size(152, 22);
+            this.tsbSaveAll.Text = "Save All";
+            this.tsbSaveAll.Click += new System.EventHandler(this.tsbSaveAll_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 595);
             this.Controls.Add(this.toolStripContainer1);
-            this.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "EnvSet";
@@ -150,12 +168,14 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tsbSave;
         private System.Windows.Forms.ToolStripButton tsbReload;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private EnvVarEditor dgvSystem;
         private EnvVarEditor dgvUser;
+        private System.Windows.Forms.ToolStripDropDownButton tsbSave;
+        private System.Windows.Forms.ToolStripMenuItem tsbSaveUser;
+        private System.Windows.Forms.ToolStripMenuItem tsbSaveAll;
     }
 }
 
